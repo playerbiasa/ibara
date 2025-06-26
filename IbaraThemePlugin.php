@@ -1,0 +1,56 @@
+<?php
+
+/**
+ * @file plugins/themes/ibara/IbaraThemePlugin.php
+ *
+ * Copyright (c) 2014-2024 Simon Fraser University
+ * Copyright (c) 2003-2024 John Willinsky
+ * Distributed under the GNU GPL v3. For full terms see the file docs/COPYING.
+ *
+ * @class ibaraThreeThemePlugin
+ * @brief Default theme
+ */
+
+namespace APP\plugins\themes\ibara;
+
+use PKP\plugins\ThemePlugin;
+
+class IbaraThemePlugin extends ThemePlugin
+{
+	/**
+	 * Initialize the theme
+	 *
+	 * @return null
+	 */
+	public function init()
+	{
+
+		// Add Style Bootstrap
+		$this->addStyle('bootstrap', 'styles/bootstrap.min.css');
+		$this->addStyle('fontawesome', 'styles/fontawesome.min.css');
+		$this->addStyle('bootstrapjs', 'styles/bootstrap.bundle.min.css');
+		$this->addStyle('custom', 'styles/custom.css');
+	}
+
+	/**
+	 * Get the display name of this plugin
+	 * @return string
+	 */
+	function getDisplayName()
+	{
+		return __('plugins.themes.ibara.name');
+	}
+
+	/**
+	 * Get the description of this plugin
+	 * @return string
+	 */
+	function getDescription()
+	{
+		return __('plugins.themes.ibara.description');
+	}
+}
+
+if (!PKP_STRICT_MODE) {
+	class_alias('\APP\plugins\themes\ibara\IbaraThemePlugin', '\IbaraThemePlugin');
+}
