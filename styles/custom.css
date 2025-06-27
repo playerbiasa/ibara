@@ -1,3 +1,18 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
-}
+  /* css tambahan */
+  .dropdown-menu {
+    padding: 0.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden; /* ⬅️ Ini penting agar hover tidak meluber keluar */
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    min-width: 220px;
+  }
+  
+  .dropdown-menu .dropdown-item {
+    padding: 0.75rem 1rem; /* Jangan terlalu besar horizontalnya */
+    font-size: 1rem;
+    color: #212529 !important;
+    border-radius: 0 !important; /* ⬅️ Hindari border-radius per item */
+  }
+  
+  
+  

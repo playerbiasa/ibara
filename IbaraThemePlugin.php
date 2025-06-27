@@ -14,6 +14,8 @@
 namespace APP\plugins\themes\ibara;
 
 use PKP\plugins\ThemePlugin;
+use APP\core\Application;
+use PKP\config\Config;
 
 class IbaraThemePlugin extends ThemePlugin
 {
@@ -26,10 +28,22 @@ class IbaraThemePlugin extends ThemePlugin
 	{
 
 		// Add Style Bootstrap
-		$this->addStyle('bootstrap', 'styles/bootstrap.min.css');
-		$this->addStyle('fontawesome', 'styles/fontawesome.min.css');
-		$this->addStyle('bootstrapjs', 'styles/bootstrap.bundle.min.css');
+		$this->addStyle('bootstrap', 'styles/bootstrap/css/bootstrap.min.css');
+		$this->addStyle('icons', 'styles/bootstrap-icons/bootstrap-icons.css');
+		$this->addStyle('aos', 'styles/aos/aos.css');
+		$this->addStyle('fontawesome', 'styles/fontawesome/css/all.min.css');
 		$this->addStyle('custom', 'styles/custom.css');
+		$this->addStyle('main', 'styles/css/main.css');
+		
+
+		// Add Script
+		$this->addScript('bootstrap', 'styles/bootstrap/js/bootstrap.bundle.min.js');
+		$this->addScript('main', 'styles/js/main.js');
+		$this->addScript('aos', 'styles/aos/aos.js');
+
+
+		// Add navigation menu areas for this theme
+        $this->addMenuArea(['primary', 'user']);
 	}
 
 	/**
