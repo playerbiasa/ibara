@@ -34,7 +34,7 @@ class IbaraThemePlugin extends ThemePlugin
 		$this->addStyle('fontawesome', 'styles/fontawesome/css/all.min.css');
 		$this->addStyle('custom', 'styles/custom.css');
 		$this->addStyle('main', 'styles/css/main.css');
-		
+
 
 		// Add Script
 		$this->addScript('bootstrap', 'styles/bootstrap/js/bootstrap.bundle.min.js');
@@ -43,7 +43,7 @@ class IbaraThemePlugin extends ThemePlugin
 
 
 		// Add navigation menu areas for this theme
-        $this->addMenuArea(['primary', 'user']);
+		$this->addMenuArea(['primary', 'user']);
 	}
 
 	/**

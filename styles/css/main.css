@@ -230,7 +230,7 @@ h6 {
 
 .header .topbar {
   background-color: var(--accent-color);
-  height: 40px;
+  height: auto;
   padding: 0;
   font-size: 14px;
   transition: all 0.5s;
@@ -269,7 +269,8 @@ h6 {
   color: color-mix(in srgb, var(--contrast-color), transparent 40%);
   line-height: 0;
   transition: 0.3s;
-  margin-left: 20px;
+  margin-left: 10px;
+  padding: 0;
 }
 
 .header .topbar .social-links a:hover {

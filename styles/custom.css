@@ -1,18 +1,71 @@
-  /* css tambahan */
-  .dropdown-menu {
-    padding: 0.5rem 0;
-    border-radius: 0.5rem;
-    overflow: hidden; /* ⬅️ Ini penting agar hover tidak meluber keluar */
-    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
-    min-width: 220px;
-  }
-  
-  .dropdown-menu .dropdown-item {
-    padding: 0.75rem 1rem; /* Jangan terlalu besar horizontalnya */
-    font-size: 1rem;
-    color: #212529 !important;
-    border-radius: 0 !important; /* ⬅️ Hindari border-radius per item */
-  }
+.pkp_site_name {
+  position: relative;
+  width: 100%;
+  left: auto;
+  right: auto;
+  padding: 0;
+  white-space: normal;
+  font-size: 2em;
+  background: transparent;
+  overflow: visible
+}
+
+.pkp_site_name .is_text {
+  font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+  font-size: 1.573rem;
+  font-weight: 700;
+  line-height: 2.857rem;
+  color: #fff;
+  text-decoration: none
+}
+
+
+
+.pkp_screen_reader,
+.cmp_skip_to_content a,
+.pkp_page_index .journals h2,
+.pkp_page_index .cmp_announcements h2,
+.page_register .context_optin .roles legend {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  left: -2000px;
+}
+
+.pkp_site_name>a {
+  padding-top: .714rem;
+  padding-bottom: .714rem
+}
+
+.pkp_site_name>a:focus {
+  outline: 0
+}
+
+.pkp_site_name .is_img {
+  display: inline-block;
+  margin-top: .357rem;
+  margin-bottom: .357rem;
+  padding: 0
+}
+
+.pkp_site_name .is_img:focus {
+  outline: 1px solid rgba(0, 0, 0, 0.84)
+}
+
+.pkp_site_name .is_img img {
+  display: block;
+  max-height: 2.143rem;
+  max-width: 100%;
+  width: auto;
+  height: auto
+}
+
+@media (min-width: 992px) {
+  .pkp_site_name .is_img img {
+      max-height: 80px;
+    }
+}
+
+
   
   
   

@@ -30,12 +30,22 @@
 
     <div class="topbar d-flex align-items-center">
       <div class="container d-flex justify-content-center justify-content-md-between">
+      {if !$requestedPage || $requestedPage === 'index'}
+						<h1 class="pkp_screen_reader">
+							{if $currentContext}
+								{$displayPageHeaderTitle|escape}
+							{else}
+								{$siteTitle|escape}
+							{/if}
+						</h1>
+					{/if}
         <div class="contact-info d-flex align-items-center">
+        <div class="pkp_site_name">
           {capture assign="homeUrl"}
 							{url page="index" router=\PKP\core\PKPApplication::ROUTE_PAGE}
 						{/capture}
 						{if $displayPageHeaderLogo}
-							<a href="{$homeUrl}" class="d-flex align-items-center">
+							<a href="{$homeUrl}" class="is_img">
 								<img src="{$publicFilesDir}/{$displayPageHeaderLogo.uploadName|escape:"url"}" {if $displayPageHeaderLogo.altText != ''}alt="{$displayPageHeaderLogo.altText|escape}"{/if}>
 							</a>
 						{elseif $displayPageHeaderTitle}
@@ -45,7 +55,7 @@
 								<img src="{$baseUrl}/templates/images/structure/logo.png" alt="{$applicationName|escape}" title="{$applicationName|escape}" />
 							</a>
 						{/if}
-        </div>
+        </div></div>
         <div class="social-links d-none d-md-flex align-items-center">
           <nav id="navmenu" class="navmenu">
             {load_menu name="user" id="navigationUser" ulClass="nav nav-pills"}
@@ -63,32 +73,13 @@
           <h1 class="sitename">IBARA</h1>
         </a>
 
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home<br></a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#departments">Departments</a></li>
-            <li><a href="#doctors">Doctors</a></li>
-            <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-              <ul>
-                <li><a href="#">Dropdown 1</a></li>
-                <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
-                  <ul>
-                    <li><a href="#">Deep Dropdown 1</a></li>
-                    <li><a href="#">Deep Dropdown 2</a></li>
-                    <li><a href="#">Deep Dropdown 3</a></li>
-                    <li><a href="#">Deep Dropdown 4</a></li>
-                    <li><a href="#">Deep Dropdown 5</a></li>
-                  </ul>
-                </li>
-                <li><a href="#">Dropdown 2</a></li>
-                <li><a href="#">Dropdown 3</a></li>
-                <li><a href="#">Dropdown 4</a></li>
-              </ul>
-            </li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
+        {capture assign="primaryMenu"}
+					{load_menu name="primary" id="navigationPrimary" ulClass="pkp_navigation_primary"}
+				{/capture}
+
+        <nav id="navmenu" class="navmenu align-items-center">
+            {* Primary navigation menu for current application *}
+							{$primaryMenu}
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
@@ -98,6 +89,5 @@
 
     </div>
 
-  </header>
-
-  <main class="main">
+</header>
+<main class="main">
